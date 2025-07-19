@@ -1,136 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cinnamon Toast Voyage</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: auto;
-      padding: 20px;
-      background-color: #fff9c4; /* light yellow */
+      background-color: #fff8dc; /* light yellow */
     }
-    /* Hamburger icon */
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     .menu-icon {
-      font-size: 30px;
+      font-size: 1.5rem;
       cursor: pointer;
-      user-select: none;
-      margin-bottom: 10px;
-      color: #555;
     }
-    /* Hide menu by default */
-    #menu {
+    nav {
       display: none;
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 20px;
-      background-color: #fffde7; /* slightly lighter yellow */
-      border-radius: 5px;
-    }
-    /* Show menu when active */
-    #menu.active {
-      display: block;
-    }
-    /* Category titles */
-    .category {
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 10px;
-      color: #fbc02d; /* golden yellow */
-      padding: 5px 0;
-      border-bottom: 1px solid #fdd835;
-    }
-    /* Links under categories */
-    .links {
-      margin-left: 20px;
-      margin-top: 5px;
-      display: none;
-    }
-    /* Show links when category active */
-    .links.active {
-      display: block;
-    }
-    /* Search input */
-    #search {
+      background-color: #444;
+      color: white;
+      position: absolute;
+      top: 60px;
+      left: 0;
       width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      font-size: 16px;
-      border: 1px solid #fbc02d;
-      border-radius: 4px;
-      background-color: #fffde7;
+      padding: 1rem;
     }
-    a {
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      margin-bottom: 0.5rem;
+    }
+    nav ul li ul {
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+    }
+    nav a {
+      color: white;
       text-decoration: none;
-      color: #33691e; /* dark green */
-      font-weight: 600;
     }
-    a:hover {
-      text-decoration: underline;
-      color: #827717;
+    .search-box {
+      margin: 1rem;
+    }
+    .search-box input {
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 300px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Cinnamon Toast Voyage</h1>
+    <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+  </header>
+  <nav id="menu">
+    <ul>
+      <li>Wikipedia Pages
+        <ul>
+          <li><a href="PLACEHOLDER.html">Sample Wikipedia Page</a></li>
+        </ul>
+      </li>
+      <li>Soapbox
+        <ul>
+          <li><a href="#">Opinion Piece 1</a></li>
+        </ul>
+      </li>
+      <li>How-To with ChatGPT
+        <ul>
+          <li><a href="How-Two-Smart-Glasses.html">Smart Glasses Guide</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
-  <h1>Cinnamon Toast Voyage</h1>
-
-  <!-- Hamburger Menu Icon -->
-  <div class="menu-icon" id="menu-icon">&#9776; Menu</div>
-
-  <!-- Menu -->
-  <div id="menu">
-    <input type="text" id="search" placeholder="Search topics..." />
-
-    <div class="category" data-category="home-improvement">Home Improvement</div>
-    <div class="links" data-category="home-improvement">
-      <a href="index.html">Homepage</a><br />
-      <!-- No smart glasses here anymore -->
-    </div>
-
-    <div class="category" data-category="cooking">Cooking</div>
-    <div class="links" data-category="cooking">
-      <a href="PLACEHOLDER.html">Placeholder (Cooking?)</a>
-    </div>
-
-    <div class="category" data-category="misc">Misc</div>
-    <div class="links" data-category="misc">
-      <a href="How-Two-Smart-Glasses.html">Smart Glasses Guide</a><br />
-      <a href="PLACEHOLDER.html">Misc Placeholder</a>
-    </div>
+  <div class="search-box">
+    <input type="text" placeholder="Search for topics...">
   </div>
 
-<script>
-  // Toggle menu open/close
-  document.getElementById('menu-icon').addEventListener('click', function() {
-    document.getElementById('menu').classList.toggle('active');
-  });
-
-  // Toggle category links open/close
-  document.querySelectorAll('.category').forEach(function(cat) {
-    cat.addEventListener('click', function() {
-      const category = cat.getAttribute('data-category');
-      const links = document.querySelector('.links[data-category="' + category + '"]');
-      links.classList.toggle('active');
-    });
-  });
-
-  // Search filter function
-  document.getElementById('search').addEventListener('input', function() {
-    const query = this.value.toLowerCase();
-    const links = document.querySelectorAll('#menu a');
-
-    links.forEach(link => {
-      if(link.textContent.toLowerCase().includes(query)) {
-        link.style.display = '';
-      } else {
-        link.style.display = 'none';
-      }
-    });
-  });
-</script>
-
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
