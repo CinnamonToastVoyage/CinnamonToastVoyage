@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cinnamon Toast Voyage</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header>
-    <div class="site-title">
-      <a href="index.html">Cinnamon Toast Voyage</a>
-    </div>
-    <nav>
-      <div class="hamburger">&#9776;</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pop-culture.html">Pop Culture</a></li>
-        <li><a href="recipes.html">Recipes</a></li>
-        <li><a href="misc.html">Misc</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div class="site-title">
+    <a href="index.html">Cinnamon Toast Voyage</a>
+  </div>
+  <nav>
+    <div class="hamburger">&#9776;</div>
+    <ul class="nav-links">
+      <li>
+        <a href="#">Wikipedia Pages</a>
+        <ul>
+          <li><a href="pop-culture.html">Pop Culture</a></li>
+          <!-- Add more Wikipedia subpages here -->
+        </ul>
+      </li>
+      <li>
+        <a href="#">Soapbox</a>
+        <ul>
+          <li><a href="soapbox1.html">Soapbox 1</a></li>
+          <!-- Add more Soapbox subpages -->
+        </ul>
+      </li>
+      <li>
+        <a href="#">How-To with ChatGPT</a>
+        <ul>
+          <li><a href="how-to1.html">How-To 1</a></li>
+          <!-- Add more How-To subpages -->
+        </ul>
+      </li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <main>
     <div class="search-container">
@@ -43,5 +55,12 @@
       navLinks.classList.toggle('active');
     });
   </script>
+    <script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
