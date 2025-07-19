@@ -19,6 +19,16 @@
       align-items: center;
       gap: 1rem;
     }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+      /* Make header title clickable */
+    }
+    header h1 a {
+      color: white;
+      text-decoration: none;
+    }
     .menu {
       position: relative;
     }
@@ -33,7 +43,7 @@
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: white;
+      background-color: #4B2B0A; /* very dark brown */
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       display: none;
       flex-direction: column;
@@ -41,12 +51,21 @@
       min-width: 220px;
       border: 3px solid #d2691e; /* cinnamon toast border */
       border-radius: 4px;
+      font-weight: bold;
     }
     .menu:hover nav {
       display: flex;
     }
     .dropdown {
       position: relative;
+    }
+    .dropdown > a {
+      color: white;
+      padding: 10px;
+      display: block;
+    }
+    .dropdown:hover > a {
+      background-color: #6e3f12; /* lighter dark brown on hover */
     }
     .dropdown:hover .submenu {
       display: block;
@@ -56,25 +75,20 @@
       position: absolute;
       top: 0;
       left: 100%;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      background-color: #4B2B0A; /* very dark brown */
       min-width: 200px;
       z-index: 2;
       border: 3px solid #d2691e;
       border-radius: 4px;
+      font-weight: bold;
     }
-    a {
-      color: #a0522d;
-      text-decoration: none;
+    .submenu a {
+      color: white;
       padding: 10px;
       display: block;
     }
-    a:hover {
-      background-color: #f5e1d1;
-    }
-    h1 {
-      margin: 0;
-      font-size: 1.5rem;
+    .submenu a:hover {
+      background-color: #6e3f12;
     }
     main {
       margin: 2rem auto;
@@ -129,6 +143,9 @@
       <button aria-label="Toggle menu">☰</button>
       <nav>
         <div class="dropdown">
+          <a href="index.html">Home</a>
+        </div>
+        <div class="dropdown">
           <a href="#">How-To with ChatGPT</a>
           <div class="submenu">
             <a href="#">All</a>
@@ -157,8 +174,18 @@
         </div>
       </nav>
     </div>
-    <h1>Cinnamon Toast Voyage</h1>
+    <h1><a href="index.html">Cinnamon Toast Voyage</a></h1>
   </header>
 
   <div id="search-container" style="position: relative; margin-left: 1rem;">
-    <input t
+    <input type="text" id="search-input" placeholder="Search for topics..." autocomplete="off" />
+    <ul id="search-results"></ul>
+  </div>
+
+  <main>
+    <h2>Welcome!</h2>
+    <p>Browse by category using the menu above or search for specific topics.</p>
+  </main>
+
+  <script>
+    const pages = [
