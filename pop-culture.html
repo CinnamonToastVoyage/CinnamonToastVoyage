@@ -10,6 +10,7 @@
       background-color: #f5e1d1; /* light cinnamon toast */
       margin: 0;
       padding: 0;
+      color: #4b2e1e;
     }
     header {
       background-color: #a0522d; /* darker cinnamon toast */
@@ -97,10 +98,8 @@
       border-radius: 8px;
       padding: 2rem;
       box-sizing: border-box;
-      color: #4b2e1e; /* dark cinnamon text */
       min-height: 300px;
     }
-    /* Preview image styling */
     .preview-image {
       max-width: 300px;
       margin-bottom: 1rem;
@@ -118,3 +117,133 @@
     #search-input {
       width: 100%;
       padding: 8px;
+      font-size: 1rem;
+      border: 2px solid #d2691e;
+      border-radius: 6px;
+      box-sizing: border-box;
+      color: #4b2e1e;
+    }
+    #search-results {
+      margin-top: 0.5rem;
+      max-width: 300px;
+      border: 2px solid #d2691e;
+      border-radius: 6px;
+      background: white;
+      display: none;
+      position: absolute;
+      z-index: 10;
+      color: #4b2e1e;
+    }
+    #search-results li {
+      padding: 8px;
+      cursor: pointer;
+    }
+    #search-results li:hover {
+      background-color: #f5e1d1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="menu">
+      <button aria-label="Toggle menu">☰</button>
+      <nav>
+        <div class="dropdown">
+          <a href="index.html">Home</a>
+        </div>
+        <div class="dropdown">
+          <a href="#">How-To with ChatGPT</a>
+          <div class="submenu">
+            <a href="#">All</a>
+            <a href="#">Cooking</a>
+            <a href="#">Home Improvement</a>
+            <a href="#">Misc</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">Soapbox</a>
+          <div class="submenu">
+            <a href="#">All</a>
+            <a href="#">Opinions</a>
+            <a href="#">Rants</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">Wikipedia Pages</a>
+          <div class="submenu">
+            <a href="#">All</a>
+            <a href="pop-culture.html">Pop Culture</a>
+            <a href="#">Biographies</a>
+            <a href="#">History</a>
+            <a href="#">Science</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <h1><a href="index.html">Cinnamon Toast Voyage</a></h1>
+  </header>
+
+  <div id="search-container" style="position: relative; margin-left: 1rem;">
+    <input type="text" id="search-input" placeholder="Search for topics..." autocomplete="off" />
+    <ul id="search-results"></ul>
+  </div>
+
+  <main>
+    <h2>Epstein didn't kill himself - Wikipedia</h2>
+    <a href="https://en.wikipedia.org/wiki/Epstein_didn%27t_kill_himself" target="_blank" rel="noopener noreferrer">
+      <img class="preview-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Jeffrey_Epstein_2015_cropped.jpg/320px-Jeffrey_Epstein_2015_cropped.jpg" alt="Jeffrey Epstein" />
+    </a>
+    <p>
+      This page covers the conspiracy theory surrounding Jeffrey Epstein's death.<br />
+      <a href="https://en.wikipedia.org/wiki/Epstein_didn%27t_kill_himself" target="_blank" rel="noopener noreferrer" style="color:#d2691e; font-weight: bold;">
+        Read more on Wikipedia.
+      </a>
+    </p>
+  </main>
+
+  <script>
+    const pages = [
+      { title: "Smart Glasses Guide", url: "How-Two-Smart-Glasses.html" },
+      { title: "Pop Culture", url: "pop-culture.html" },
+      { title: "Katie’s Thoughts on Toast", url: "#" },
+      { title: "Cooking Tips", url: "#" },
+      { title: "Home Improvement Basics", url: "#" },
+      { title: "Epstein didn't kill himself", url: "https://en.wikipedia.org/wiki/Epstein_didn%27t_kill_himself" }
+    ];
+
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('search-results');
+
+    input.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      results.innerHTML = '';
+      if (query.length === 0) {
+        results.style.display = 'none';
+        return;
+      }
+      const filtered = pages.filter(page => page.title.toLowerCase().includes(query));
+      if (filtered.length === 0) {
+        results.style.display = 'none';
+        return;
+      }
+      filtered.forEach(page => {
+        const li = document.createElement('li');
+        li.textContent = page.title;
+        li.onclick = () => {
+          window.open(page.url, '_blank');
+        };
+        results.appendChild(li);
+      });
+      results.style.display = 'block';
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!input.contains(e.target) && !results.contains(e.target)) {
+        results.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
