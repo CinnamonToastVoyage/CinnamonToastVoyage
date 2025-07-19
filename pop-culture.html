@@ -2,77 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pop Culture - Cinnamon Toast Voyage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pop Culture</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header>
-  <div class="site-title">
-    <a href="index.html">Cinnamon Toast Voyage</a>
-  </div>
-  <nav>
-    <div class="hamburger">&#9776;</div>
-    <ul class="nav-links">
-      <li>
-        <a href="#">Wikipedia Pages</a>
-        <ul>
-          <li><a href="pop-culture.html">Pop Culture</a></li>
-          <!-- Add more Wikipedia subpages here -->
-        </ul>
-      </li>
-      <li>
-        <a href="#">Soapbox</a>
-        <ul>
-          <li><a href="soapbox1.html">Soapbox 1</a></li>
-          <!-- Add more Soapbox subpages -->
-        </ul>
-      </li>
-      <li>
-        <a href="#">How-To with ChatGPT</a>
-        <ul>
-          <li><a href="how-to1.html">How-To 1</a></li>
-          <!-- Add more How-To subpages -->
-        </ul>
-      </li>
-      <li><a href="index.html">Home</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <h1>My Blog</h1>
+    <nav>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pop-culture.html">Pop Culture</a></li>
+        <li><a href="#">Politics</a></li>
+        <li><a href="#">True Crime</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-    <div class="search-container">
-      <input type="text" placeholder="Search..." class="search-bar" />
-    </div>
-    <section class="content">
-      <h1>Epstein didn't kill himself - Wikipedia</h1>
-      <a href="https://en.wikipedia.org/wiki/Jeffrey_Epstein" target="_blank" class="styled-link">
-        Epstein didn't kill himself - Wikipedia
-      </a>
-      <img src="epstein.jpg" alt="Jeffrey Epstein" class="feature-image" />
-      <p>
-        The phrase <em>"Epstein didn't kill himself"</em> became a popular meme and conspiracy slogan following the controversial death of Jeffrey Epstein in 2019.
-      </p>
-    </section>
+    <h2>Pop Culture</h2>
+    <img src="epstein.jpg" alt="Jeffrey Epstein" class="feature-image" />
+    <p>Jeffrey Epstein’s case revealed disturbing ties between the worlds of celebrity, finance, and politics. The mystery around his death in jail only deepened public suspicion and intrigue.</p>
   </main>
 
   <footer>
-    <p>&copy; 2025 Cinnamon Toast Voyage. All rights reserved.</p>
+    <p>&copy; 2025 My Blog</p>
   </footer>
-
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-    <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
 </body>
 </html>
