@@ -1,194 +1,92 @@
-/* Reset */
-* {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  line-height: 1.6;
+  background-color: #f4f4f4;
 }
 
-/* Body and page container */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff5cc; /* Light cinnamon toast yellow */
-  color: #4b2e2e; /* Dark brown */
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0;
-  border: 12px solid #c2923f; /* One thick cinnamon toast border */
-  border-radius: 12px;
-}
-
-/* Header */
 header {
-  background-color: #d9b75a; /* lighter cinnamon toast */
-  padding: 15px 25px;
-  border-radius: 10px 10px 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
 }
 
-/* Site title */
-.site-title a {
-  color: #4b2e2e;
-  font-weight: 700;
-  font-size: 2rem;
-  text-decoration: none;
-}
-
-/* Navigation */
 nav {
   position: relative;
+  background: #444;
 }
 
-/* Hamburger */
-.hamburger {
-  font-size: 30px;
-  cursor: pointer;
-  user-select: none;
-  color: #4b2e2e;
-  display: none; /* hide on desktop */
-}
-
-/* Navigation menu */
-.nav-links {
-  list-style: none;
+nav ul.menu {
   display: flex;
-  gap: 24px;
-  font-weight: 600;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.nav-links li {
-  position: relative;
+nav ul.menu li {
+  margin: 0;
 }
 
-/* Hover dropdown */
-.nav-links li:hover > ul {
+nav ul.menu li a {
   display: block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
 }
 
-/* Dropdown submenu */
-.nav-links ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #d9b75a;
-  border: 2px solid #c2923f;
-  border-radius: 6px;
+nav ul.menu li a:hover {
+  background: #555;
+}
+
+/* Hamburger Menu */
+#menu-toggle {
   display: none;
-  min-width: 180px;
-  padding: 8px 0;
-  z-index: 10;
-  font-weight: 600;
 }
 
-.nav-links ul li {
-  padding: 8px 20px;
-}
-
-.nav-links ul li a {
-  color: #4b2e2e;
-  text-decoration: none;
-  display: block;
-}
-
-.nav-links ul li:hover {
-  background-color: #c2923f;
-}
-
-.nav-links li a {
-  color: #4b2e2e;
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  background-color: #c2923f;
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
   color: white;
 }
 
-/* Responsive hamburger menu for mobile */
-@media (max-width: 700px) {
-  .hamburger {
-    display: block;
-  }
-  .nav-links {
+@media (max-width: 600px) {
+  nav ul.menu {
     display: none;
     flex-direction: column;
-    background-color: #fff5cc;
-    border: 2px solid #c2923f;
-    border-radius: 6px;
-    position: absolute;
-    right: 0;
-    top: 60px;
-    width: 200px;
-    padding: 10px 0;
   }
-  .nav-links.active {
+
+  #menu-toggle:checked + .hamburger + ul.menu {
     display: flex;
   }
-  .nav-links li:hover > ul {
-    display: none; /* Disable hover dropdown on mobile */
-  }
-  .nav-links ul {
-    position: static;
-    border: none;
-    background: none;
-    padding: 0;
-  }
-  .nav-links ul li {
-    padding-left: 20px;
+
+  .hamburger {
+    display: block;
+    text-align: center;
   }
 }
 
-/* Main content */
 main {
+  padding: 1rem;
   background: white;
-  border-radius: 0 0 10px 10px;
-  padding: 30px 25px;
-  min-height: 400px;
+  max-width: 800px;
+  margin: 2rem auto;
 }
 
-/* Search bar */
-.search-container {
-  margin-bottom: 20px;
-}
-
-.search-bar {
-  width: 100%;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border: 3px solid #c2923f;
-  border-radius: 6px;
-}
-
-/* Footer */
-footer {
-  margin-top: 40px;
-  border-top: 4px solid #c2923f;
-  padding-top: 10px;
-  text-align: center;
-  color: #4b2e2e;
-  font-weight: 600;
-}
-
-/* Pop Culture image */
 .feature-image {
   width: 100%;
-  max-width: 450px;
-  margin: 20px 0;
-  border-radius: 10px;
-  border: 4px solid #c2923f;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
-/* Styled link for Wikipedia */
-.styled-link {
-  color: #4b2e2e;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.styled-link:hover {
-  text-decoration: underline;
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
 }
