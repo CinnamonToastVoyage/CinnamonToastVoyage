@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>How To Smart Glasses</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+    nav ul { list-style: none; display: flex; gap: 15px; padding: 0; justify-content: center; }
+    nav a { text-decoration: none; color: #0066cc; }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="how-to-smart-glasses.html">Smart Glasses</a></li>
+      <li><a href="placeholder.html">Placeholder</a></li>
+    </ul>
+  </nav>
+
+  <h1>How To Smart Glasses</h1>
+  <p>This page will contain your notes, conversations, or info about smart glasses.</p>
+</body>
+</html>
