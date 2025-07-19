@@ -1,66 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<header>
-  <div class="site-title">
-    <a href="index.html">Cinnamon Toast Voyage</a>
-  </div>
-  <nav>
-    <div class="hamburger">&#9776;</div>
-    <ul class="nav-links">
-      <li>
-        <a href="#">Wikipedia Pages</a>
-        <ul>
-          <li><a href="pop-culture.html">Pop Culture</a></li>
-          <!-- Add more Wikipedia subpages here -->
-        </ul>
-      </li>
-      <li>
-        <a href="#">Soapbox</a>
-        <ul>
-          <li><a href="soapbox1.html">Soapbox 1</a></li>
-          <!-- Add more Soapbox subpages -->
-        </ul>
-      </li>
-      <li>
-        <a href="#">How-To with ChatGPT</a>
-        <ul>
-          <li><a href="how-to1.html">How-To 1</a></li>
-          <!-- Add more How-To subpages -->
-        </ul>
-      </li>
-      <li><a href="index.html">Home</a></li>
-    </ul>
-  </nav>
-</header>
-
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Blog</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+    <nav>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pop-culture.html">Pop Culture</a></li>
+        <li><a href="#">Politics</a></li>
+        <li><a href="#">True Crime</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-    <div class="search-container">
-      <input type="text" placeholder="Search..." class="search-bar" />
-    </div>
-    <section class="content">
-      <h1>Welcome to Cinnamon Toast Voyage</h1>
-      <p>Your cozy corner for pop culture musings, fun recipes, and all the things you love.</p>
-    </section>
+    <h2>Welcome to My Blog</h2>
+    <p>This is the homepage. Click a category above to dive in.</p>
   </main>
 
   <footer>
-    <p>&copy; 2025 Cinnamon Toast Voyage. All rights reserved.</p>
+    <p>&copy; 2025 My Blog</p>
   </footer>
-
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-    <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
 </body>
 </html>
