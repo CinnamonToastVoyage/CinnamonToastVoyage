@@ -2,128 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cinnamon Toast Voyage</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #fff9db; /* light yellow */
+      background-color: #f5e1d1; /* light cinnamon toast */
       margin: 0;
       padding: 0;
     }
-
     header {
-      background-color: #b8d8b8; /* soft green */
-      color: #333;
+      background-color: #a0522d; /* darker cinnamon toast */
+      color: white;
       padding: 1rem;
       display: flex;
       align-items: center;
       gap: 1rem;
     }
-
     .menu {
       position: relative;
     }
-
     .menu > button {
       background: none;
       border: none;
       font-size: 1.8rem;
-      color: #333;
+      color: white;
       cursor: pointer;
     }
-
     nav {
       position: absolute;
       top: 100%;
       left: 0;
-      background-color: #fff;
+      background-color: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       display: none;
       flex-direction: column;
       z-index: 1;
       min-width: 220px;
+      border: 3px solid #d2691e; /* cinnamon toast border */
+      border-radius: 4px;
     }
-
     .menu:hover nav {
       display: flex;
     }
-
     .dropdown {
       position: relative;
     }
-
     .dropdown:hover .submenu {
       display: block;
     }
-
     .submenu {
       display: none;
       position: absolute;
       top: 0;
       left: 100%;
-      background-color: #fff;
+      background-color: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       min-width: 200px;
       z-index: 2;
+      border: 3px solid #d2691e;
+      border-radius: 4px;
     }
-
     a {
-      color: #333;
+      color: #a0522d;
       text-decoration: none;
       padding: 10px;
       display: block;
     }
-
     a:hover {
-      background-color: #f0f0f0;
+      background-color: #f5e1d1;
     }
-
     h1 {
       margin: 0;
       font-size: 1.5rem;
     }
-
     main {
+      margin: 2rem auto;
+      max-width: 800px;
+      background: white;
+      border: 8px solid #d2691e; /* thick cinnamon toast border */
+      border-radius: 8px;
       padding: 2rem;
+      box-sizing: border-box;
+      color: #4b2e1e; /* dark cinnamon text */
     }
-
     /* Search Bar */
     #search-container {
-      margin: 1rem;
+      margin: 1rem auto;
       max-width: 300px;
+      position: relative;
     }
-
     #search-input {
       width: 100%;
       padding: 8px;
       font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      border: 2px solid #d2691e;
+      border-radius: 6px;
       box-sizing: border-box;
+      color: #4b2e1e;
     }
-
     /* Search results list */
     #search-results {
       margin-top: 0.5rem;
       max-width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      border: 2px solid #d2691e;
+      border-radius: 6px;
       background: white;
       display: none;
       position: absolute;
       z-index: 10;
+      color: #4b2e1e;
     }
-
     #search-results li {
       padding: 8px;
       cursor: pointer;
     }
-
     #search-results li:hover {
-      background-color: #eee;
+      background-color: #f5e1d1;
     }
-
   </style>
 </head>
 <body>
@@ -164,59 +160,5 @@
     <h1>Cinnamon Toast Voyage</h1>
   </header>
 
-  <div id="search-container" style="position: relative;">
-    <input type="text" id="search-input" placeholder="Search for topics..." autocomplete="off" />
-    <ul id="search-results"></ul>
-  </div>
-
-  <main>
-    <p>Welcome! Browse by category using the menu above or search for specific topics.</p>
-  </main>
-
-  <script>
-    // Sample search data — update this as you add pages
-    const pages = [
-      { title: "Smart Glasses Guide", url: "How-Two-Smart-Glasses.html" },
-      { title: "Pop Culture", url: "pop-culture.html" },
-      { title: "Katie’s Thoughts on Toast", url: "#" },
-      { title: "Cooking Tips", url: "#" },
-      { title: "Home Improvement Basics", url: "#" },
-      { title: "Epstein Didn’t Kill Himself - Wikipedia", url: "https://en.wikipedia.org/wiki/Epstein_didn%27t_kill_himself" }
-    ];
-
-    const input = document.getElementById('search-input');
-    const results = document.getElementById('search-results');
-
-    input.addEventListener('input', function() {
-      const query = this.value.toLowerCase();
-      results.innerHTML = '';
-      if (query.length === 0) {
-        results.style.display = 'none';
-        return;
-      }
-      const filtered = pages.filter(page => page.title.toLowerCase().includes(query));
-      if (filtered.length === 0) {
-        results.style.display = 'none';
-        return;
-      }
-      filtered.forEach(page => {
-        const li = document.createElement('li');
-        li.textContent = page.title;
-        li.onclick = () => {
-          window.open(page.url, '_blank');
-        };
-        results.appendChild(li);
-      });
-      results.style.display = 'block';
-    });
-
-    // Hide results when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!input.contains(e.target) && !results.contains(e.target)) {
-        results.style.display = 'none';
-      }
-    });
-  </script>
-
-</body>
-</html>
+  <div id="search-container" style="position: relative; margin-left: 1rem;">
+    <input t
