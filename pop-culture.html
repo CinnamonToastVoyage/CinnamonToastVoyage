@@ -1,249 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pop Culture - Cinnamon Toast Voyage</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5e1d1; /* light cinnamon toast */
-      margin: 0;
-      padding: 0;
-      color: #4b2e1e;
-    }
-    header {
-      background-color: #a0522d; /* darker cinnamon toast */
-      color: white;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    header h1 a {
-      color: white;
-      text-decoration: none;
-    }
-    .menu {
-      position: relative;
-    }
-    .menu > button {
-      background: none;
-      border: none;
-      font-size: 1.8rem;
-      color: white;
-      cursor: pointer;
-    }
-    nav {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #4B2B0A; /* very dark brown */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      display: none;
-      flex-direction: column;
-      z-index: 1;
-      min-width: 220px;
-      border: 3px solid #d2691e; /* cinnamon toast border */
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    .menu:hover nav {
-      display: flex;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown > a {
-      color: white;
-      padding: 10px;
-      display: block;
-    }
-    .dropdown:hover > a {
-      background-color: #6e3f12; /* lighter dark brown on hover */
-    }
-    .dropdown:hover .submenu {
-      display: block;
-    }
-    .submenu {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 100%;
-      background-color: #4B2B0A; /* very dark brown */
-      min-width: 200px;
-      z-index: 2;
-      border: 3px solid #d2691e;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    .submenu a {
-      color: white;
-      padding: 10px;
-      display: block;
-    }
-    .submenu a:hover {
-      background-color: #6e3f12;
-    }
-    main {
-      margin: 2rem auto;
-      max-width: 1100px; /* wider inside white area */
-      background: white;
-      border: 14px solid #d2691e; /* thick cinnamon toast border */
-      border-radius: 8px;
-      padding: 2rem;
-      box-sizing: border-box;
-      min-height: 300px;
-    }
-    .preview-image {
-      max-width: 300px;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.15);
-      border: 3px solid #d2691e;
-      display: block;
-    }
-    /* Search Bar */
-    #search-container {
-      margin: 1rem auto 2rem;
-      max-width: 300px;
-      position: relative;
-    }
-    #search-input {
-      width: 100%;
-      padding: 8px;
-      font-size: 1rem;
-      border: 2px solid #d2691e;
-      border-radius: 6px;
-      box-sizing: border-box;
-      color: #4b2e1e;
-    }
-    #search-results {
-      margin-top: 0.5rem;
-      max-width: 300px;
-      border: 2px solid #d2691e;
-      border-radius: 6px;
-      background: white;
-      display: none;
-      position: absolute;
-      z-index: 10;
-      color: #4b2e1e;
-    }
-    #search-results li {
-      padding: 8px;
-      cursor: pointer;
-    }
-    #search-results li:hover {
-      background-color: #f5e1d1;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pop Culture | Cinnamon Toast Voyage</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
+<body>
   <header>
-    <div class="menu">
-      <button aria-label="Toggle menu">☰</button>
-      <nav>
-        <div class="dropdown">
-          <a href="index.html">Home</a>
-        </div>
-        <div class="dropdown">
-          <a href="#">How-To with ChatGPT</a>
-          <div class="submenu">
-            <a href="#">All</a>
-            <a href="#">Cooking</a>
-            <a href="#">Home Improvement</a>
-            <a href="#">Misc</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#">Soapbox</a>
-          <div class="submenu">
-            <a href="#">All</a>
-            <a href="#">Opinions</a>
-            <a href="#">Rants</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#">Wikipedia Pages</a>
-          <div class="submenu">
-            <a href="#">All</a>
-            <a href="pop-culture.html">Pop Culture</a>
-            <a href="#">Biographies</a>
-            <a href="#">History</a>
-            <a href="#">Science</a>
-          </div>
-        </div>
-      </nav>
+    <div class="header-title">
+      <a href="index.html" class="site-link">Cinnamon Toast Voyage</a>
     </div>
-    <h1><a href="index.html">Cinnamon Toast Voyage</a></h1>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pop-culture.html">Pop Culture</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="history.html">History</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div id="search-container" style="position: relative; margin-left: 1rem;">
-    <input type="text" id="search-input" placeholder="Search for topics..." autocomplete="off" />
-    <ul id="search-results"></ul>
-  </div>
+  <main class="content wide">
+    <form class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
 
-  <main>
-    <h2>Epstein didn't kill himself - Wikipedia</h2>
-    <a href="https://en.wikipedia.org/wiki/Epstein_didn%27t_kill_himself" target="_blank" rel="noopener noreferrer">
-      <img class="preview-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Jeffrey_Epstein_2015_cropped.jpg/320px-Jeffrey_Epstein_2015_cropped.jpg" alt="Jeffrey Epstein" />
-    </a>
-    <p>
-      This page covers the conspiracy theory surrounding Jeffrey Epstein's death.<br />
-      <a href="https://en.wikipedia.org/wiki/Epstein_didn%27t_kill_himself" target="_blank" rel="noopener noreferrer" style="color:#d2691e; font-weight: bold;">
-        Read more on Wikipedia.
+    <h1>Pop Culture</h1>
+
+    <section class="article">
+      <h2>Epstein didn't kill himself - Wikipedia</h2>
+      <a href="https://en.wikipedia.org/wiki/Jeffrey_Epstein" target="_blank" class="styled-link">
+        Epstein didn't kill himself - Wikipedia
       </a>
-    </p>
+      <div>
+        <img src="epstein.jpg" alt="Jeffrey Epstein" class="thumbnail">
+      </div>
+    </section>
+
+    <!-- Add more articles below as needed -->
+
   </main>
 
-  <script>
-    const pages = [
-      { title: "Smart Glasses Guide", url: "How-Two-Smart-Glasses.html" },
-      { title: "Pop Culture", url: "pop-culture.html" },
-      { title: "Katie’s Thoughts on Toast", url: "#" },
-      { title: "Cooking Tips", url: "#" },
-      { title: "Home Improvement Basics", url: "#" },
-      { title: "Epstein didn't kill himself", url: "https://en.wikipedia.org/wiki/Epstein_didn%27t_kill_himself" }
-    ];
-
-    const input = document.getElementById('search-input');
-    const results = document.getElementById('search-results');
-
-    input.addEventListener('input', function() {
-      const query = this.value.toLowerCase();
-      results.innerHTML = '';
-      if (query.length === 0) {
-        results.style.display = 'none';
-        return;
-      }
-      const filtered = pages.filter(page => page.title.toLowerCase().includes(query));
-      if (filtered.length === 0) {
-        results.style.display = 'none';
-        return;
-      }
-      filtered.forEach(page => {
-        const li = document.createElement('li');
-        li.textContent = page.title;
-        li.onclick = () => {
-          window.open(page.url, '_blank');
-        };
-        results.appendChild(li);
-      });
-      results.style.display = 'block';
-    });
-
-    document.addEventListener('click', function(e) {
-      if (!input.contains(e.target) && !results.contains(e.target)) {
-        results.style.display = 'none';
-      }
-    });
-  </script>
-
+  <footer>
+    <p>&copy; 2025 Cinnamon Toast Voyage</p>
+  </footer>
 </body>
 </html>
