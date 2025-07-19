@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cinnamon Toast Voyage</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
   <header>
-    <nav class="navbar">
-      <div class="navbar-left">
-        <a href="index.html" class="site-title">Cinnamon Toast Voyage</a>
-      </div>
-      <div class="navbar-right">
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="hamburger">&#9776;</label>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pop-culture.html">Pop Culture</a></li>
-          <li><a href="deep-dives.html">Deep Dives</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </div>
+    <div class="site-title">
+      <a href="index.html">Cinnamon Toast Voyage</a>
+    </div>
+    <nav>
+      <div class="hamburger">&#9776;</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pop-culture.html">Pop Culture</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="misc.html">Misc</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main class="main-home">
+  <main>
     <div class="search-container">
       <input type="text" placeholder="Search..." class="search-bar" />
     </div>
-    <section class="welcome-text">
+    <section class="content">
       <h1>Welcome to Cinnamon Toast Voyage</h1>
-      <p>Your cozy destination for pop culture musings, deep dives, and chaotic observations.</p>
+      <p>Your cozy corner for pop culture musings, fun recipes, and all the things you love.</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Cinnamon Toast Voyage</p>
+    <p>&copy; 2025 Cinnamon Toast Voyage. All rights reserved.</p>
   </footer>
-</body>
 
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
 </html>
