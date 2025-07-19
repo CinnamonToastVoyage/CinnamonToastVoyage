@@ -9,6 +9,7 @@
       max-width: 700px;
       margin: auto;
       padding: 20px;
+      background-color: #fff9c4; /* light yellow */
     }
     /* Hamburger icon */
     .menu-icon {
@@ -16,6 +17,7 @@
       cursor: pointer;
       user-select: none;
       margin-bottom: 10px;
+      color: #555;
     }
     /* Hide menu by default */
     #menu {
@@ -23,6 +25,8 @@
       border: 1px solid #ccc;
       padding: 10px;
       margin-bottom: 20px;
+      background-color: #fffde7; /* slightly lighter yellow */
+      border-radius: 5px;
     }
     /* Show menu when active */
     #menu.active {
@@ -33,6 +37,9 @@
       font-weight: bold;
       cursor: pointer;
       margin-top: 10px;
+      color: #fbc02d; /* golden yellow */
+      padding: 5px 0;
+      border-bottom: 1px solid #fdd835;
     }
     /* Links under categories */
     .links {
@@ -51,10 +58,18 @@
       margin-bottom: 10px;
       box-sizing: border-box;
       font-size: 16px;
+      border: 1px solid #fbc02d;
+      border-radius: 4px;
+      background-color: #fffde7;
     }
     a {
       text-decoration: none;
-      color: #0066cc;
+      color: #33691e; /* dark green */
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #827717;
     }
   </style>
 </head>
@@ -72,19 +87,17 @@
     <div class="category" data-category="home-improvement">Home Improvement</div>
     <div class="links" data-category="home-improvement">
       <a href="index.html">Homepage</a><br />
-      <!-- Add your Home Improvement links here -->
-      <a href="How-Two-Smart-Glasses.html">Smart Glasses Guide</a>
+      <!-- No smart glasses here anymore -->
     </div>
 
     <div class="category" data-category="cooking">Cooking</div>
     <div class="links" data-category="cooking">
-      <!-- Add Cooking links here -->
       <a href="PLACEHOLDER.html">Placeholder (Cooking?)</a>
     </div>
 
     <div class="category" data-category="misc">Misc</div>
     <div class="links" data-category="misc">
-      <!-- Add Miscellaneous links here -->
+      <a href="How-Two-Smart-Glasses.html">Smart Glasses Guide</a><br />
       <a href="PLACEHOLDER.html">Misc Placeholder</a>
     </div>
   </div>
