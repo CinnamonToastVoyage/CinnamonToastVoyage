@@ -10,6 +10,7 @@
       background-color: #f5e1d1; /* light cinnamon toast */
       margin: 0;
       padding: 0;
+      color: #4b2e1e;
     }
     header {
       background-color: #a0522d; /* darker cinnamon toast */
@@ -93,15 +94,15 @@
       margin: 2rem auto;
       max-width: 800px;
       background: white;
-      border: 8px solid #d2691e; /* thick cinnamon toast border */
+      border: 14px solid #d2691e; /* thick cinnamon toast border */
       border-radius: 8px;
       padding: 2rem;
       box-sizing: border-box;
-      color: #4b2e1e; /* dark cinnamon text */
+      min-height: 300px;
     }
     /* Search Bar */
     #search-container {
-      margin: 1rem auto;
+      margin: 1rem auto 2rem;
       max-width: 300px;
       position: relative;
     }
@@ -114,7 +115,6 @@
       box-sizing: border-box;
       color: #4b2e1e;
     }
-    /* Search results list */
     #search-results {
       margin-top: 0.5rem;
       max-width: 300px;
@@ -176,4 +176,58 @@
     <h1><a href="index.html">Cinnamon Toast Voyage</a></h1>
   </header>
 
-  <div id="search-container" style="position: relative; margin-left: 1re
+  <div id="search-container" style="position: relative; margin-left: 1rem;">
+    <input type="text" id="search-input" placeholder="Search for topics..." autocomplete="off" />
+    <ul id="search-results"></ul>
+  </div>
+
+  <main>
+    <h2>Welcome!</h2>
+    <p>Browse by category using the menu above or search for specific topics.</p>
+  </main>
+
+  <script>
+    const pages = [
+      { title: "Smart Glasses Guide", url: "How-Two-Smart-Glasses.html" },
+      { title: "Pop Culture", url: "pop-culture.html" },
+      { title: "Katie’s Thoughts on Toast", url: "#" },
+      { title: "Cooking Tips", url: "#" },
+      { title: "Home Improvement Basics", url: "#" },
+      { title: "Epstein didn't kill himself", url: "https://en.wikipedia.org/wiki/Epstein_didn%27t_kill_himself" }
+    ];
+
+    const input = document.getElementById('search-input');
+    const results = document.getElementById('search-results');
+
+    input.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      results.innerHTML = '';
+      if (query.length === 0) {
+        results.style.display = 'none';
+        return;
+      }
+      const filtered = pages.filter(page => page.title.toLowerCase().includes(query));
+      if (filtered.length === 0) {
+        results.style.display = 'none';
+        return;
+      }
+      filtered.forEach(page => {
+        const li = document.createElement('li');
+        li.textContent = page.title;
+        li.onclick = () => {
+          window.open(page.url, '_blank');
+        };
+        results.appendChild(li);
+      });
+      results.style.display = 'block';
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!input.contains(e.target) && !results.contains(e.target)) {
+        results.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
