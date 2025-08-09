@@ -2,32 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Blog</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stylish Geo Site</title>
+  <style>
+    /* Reset & basics */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #f5f7fa;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      user-select: none;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background: #4a90e2;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      border-radius: 0 0 0 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    nav.show {
+      display: flex;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      width: 25px;
+      height: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hamburger div {
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .btn-primary {
+      background: #4a90e2;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #357abd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e1e8f7;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Responsive */
+    @media(min-width: 600px) {
+      nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: transparent;
+        width: auto;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      nav a {
+        border: none;
+        padding: 0 1rem;
+        color: white;
+      }
+      .hamburger {
+        display: none;
+      }
+      main {
+        padding: 4rem 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>My Blog</h1>
-    <nav>
-      <input type="checkbox" id="menu-toggle" />
-      <label for="menu-toggle" class="hamburger">&#9776;</label>
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pop-culture.html">Pop Culture</a></li>
-        <li><a href="#">Politics</a></li>
-        <li><a href="#">True Crime</a></li>
-      </ul>
+    <div class="logo">GeoSite</div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="nav-menu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
-
   <main>
-    <h2>Welcome to My Blog</h2>
-    <p>This is the homepage. Click a category above to dive in.</p>
+    <h1>Welcome to GeoSite</h1>
+    <p>Your stylish geolocation-inspired website starter.</p>
+    <button class="btn-primary">Get Started</button>
   </main>
-
   <footer>
-    <p>&copy; 2025 My Blog</p>
+    &copy; 2025 GeoSite. All rights reserved.
   </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+      // Animate hamburger lines (optional)
+      hamburger.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
